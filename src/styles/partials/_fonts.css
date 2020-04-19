@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Aileron';
+  src: url('../fonts/Aileron-Regular.woff') format('woff'),
+      url('../fonts/Aileron-Regular.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron';
+  src: url('../fonts/Aileron-Bold.woff') format('woff'),
+      url('../fonts/Aileron-Bold.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Agne';
+  src: url('../fonts/Agne-Regular.woff') format('woff'),
+      url('../fonts/Agne-Regular.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
