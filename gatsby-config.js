@@ -1,3 +1,5 @@
+require("dotenv").config({ path: `.env` })
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby x Tailwind x Framer Motion`,
@@ -39,9 +41,8 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: ``,
-        previewMode: true
+        apiToken: `${process.env.DATOCMS_KEY}`,
       },
-    }
+    },
   ],
 }
