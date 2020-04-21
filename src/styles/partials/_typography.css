@@ -79,7 +79,7 @@ h3, .h3 {
     @apply relative;
 
     &:after {
-      @apply absolute bottom-0 left-0 right-0 text-center -mb-3;
+      @apply absolute bottom-0 left-0 right-0 text-center -mb-4 text-xl;
       content: '•';
     }
   }
