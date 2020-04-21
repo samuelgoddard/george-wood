@@ -12,7 +12,7 @@ class Reviews extends React.Component {
   }
 
   fetchMusic() {
-    axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=georgewood_me&api_key=bef1d4520cfeb6e427d20e1fc40c6a27&format=json`)
+    axios.get(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=georgewood_me&api_key=bef1d4520cfeb6e427d20e1fc40c6a27&format=json`)
     
     .then(res => 
       this.setState({
