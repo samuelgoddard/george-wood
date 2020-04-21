@@ -75,7 +75,7 @@ const IndexPage = ({ location, data: { work} }) => {
         </div>
 
         <motion.div 
-          className=""
+          className="pt-12 md:pt-16"
           variants={item}
           transition="easeInOut"
         >

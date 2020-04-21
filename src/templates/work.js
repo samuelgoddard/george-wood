@@ -160,7 +160,7 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
         )}
 
         <motion.div 
-          className=""
+          className="pt-12 md:pt-16"
           variants={item}
           transition="easeInOut"
         >

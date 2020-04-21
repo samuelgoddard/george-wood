@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const Footer = ({ path }) => (
-  <div className="pt-12 md:pt-16">
+  <div className="">
     <div className={ path === "/" ? "bg-white w-full h-px opacity-10" : "bg-red w-full h-px opacity-10" }></div>
     <footer className="pt-12 pb-8 md:pt-16 md:pb-12">
       <div className="container">

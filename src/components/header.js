@@ -37,7 +37,7 @@ const Header = ({ path }) => {
               </li>
               <li><Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-red" } to="/about">About</Link></li>
               <li><Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-red" } to="/blog">Blog</Link></li>
-              <li><Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-red" } to="/contact">Contact</Link></li>
+              <li><a className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-red" } href="mailto:georgewood.me@gmail.com">Contact</a></li>
             </ul>
           </div>
         </div>

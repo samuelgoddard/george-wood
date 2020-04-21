@@ -12,7 +12,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 h1, .h1 {
-	@apply text-xl;
+	@apply text-3xl; 
+
+  @screen md {
+    @apply text-4xl;
+  }
+  
+  @screen lg {
+    @apply text-5xl;
+  }
+
+  @screen xl {
+    @apply text-6xl;
+  }
 }
 
 h2, .h2 {
@@ -28,6 +40,22 @@ h2, .h2 {
 
   @screen xl {
     @apply text-5xl;
+  }
+}
+
+h3, .h3 {
+  @apply text-xl; 
+
+  @screen md {
+    @apply text-xl;
+  }
+  
+  @screen lg {
+    @apply text-2xl;
+  }
+
+  @screen xl {
+    @apply text-3xl;
   }
 }
 
@@ -68,5 +96,23 @@ h2, .h2 {
   /* Headings following paragraphs */
   p + h1, p + h2, p + h3, p + h4 {
     @apply pt-6 block;
+  }
+}
+
+.content--fancy {
+  p {
+    &:first-of-type {
+      @apply text-lg text-red;
+    }
+  }
+}
+
+.list--fancy {
+  li {
+    @apply pb-0 mb-1 leading-none;
+    &:before {
+      @apply inline-block opacity-25 text-2xl mr-3;
+      content: '•';
+    }
   }
 }

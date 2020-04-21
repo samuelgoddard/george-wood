@@ -22,10 +22,10 @@ const item = {
   },
 }
 
-const AboutPage = ({ location }) => {
+const AboutPage = ({ location, data: { about } }) => {
   return (
     <>
-      <SEO title="About" />
+      <SEO title={about.title} />
       <motion.section
         variants={container}
         initial="hidden" 
@@ -38,15 +38,70 @@ const AboutPage = ({ location }) => {
             variants={item}
             transition="easeInOut"
           >
-            <div className="w-10/12 md:w-1/2 py-12 lg:py-16">
-              <h1 className="title text-red">Ey Up,</h1>
-              
-              <p className="text-lg text-red">I’m George. Lorem ipsum dolor sit amet, consecter adipiscing elit. Aenean in diam ante. Cras lobortis a orci sed tempus. Nulla ornare mi in lacus dignissim.</p>
-              
-              <p>Etiam arcu nisl, suscipit quis scelerisque ac, venenatis et felis. Curabitur cursus augue vitae laoreet interdum. Mauris cursus nec orci ut pellentesque. Pellentesque id congue turpis.</p>
+            <div className="w-10/12 md:w-1/2 pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pb-24">
+              <h1 className="title text-red">{about.heading}</h1>
+              <span className="block content content--fancy" dangerouslySetInnerHTML={{__html:about.introText}}></span>
             </div>
           </motion.div>
         </div>
+
+        <motion.div 
+          className=""
+          variants={item}
+          transition="easeInOut"
+        >
+          <div className="bg-red text-white py-16 md:py-20 xl:py-32">
+            <div className="container">
+              <div className="overflow-hidden">
+                <div className="flex flex-wrap md:-mx-10">
+                  <aside className="w-full md:w-1/3 md:px-10 mb-10 md:mb-0">
+
+                  {
+                    about.sidebar.map((block) => (
+                      <div key={block.id}>
+                        {
+                          block.model.apiKey === 'list_item' &&
+                          <div className="list list--fancy">
+                            <span dangerouslySetInnerHTML={{__html:block.text}}></span>
+                          </div>
+                        }
+                        {
+                          block.model.apiKey === 'title' &&
+                            <h3>{ block.text }</h3>
+                        }
+                      </div>
+                    ))
+                  }
+                  </aside>
+                  <div className="w-full md:w-1/2 xl:w-1/3 md:px-10">
+                    {
+                      about.experience.map((block, index) => {
+                        const experienceLast = about.experience.length;
+                        return (
+                          <div key={block.id}>
+                            {
+                              block.model.apiKey === 'experience_item' &&
+                              <div className="pb-6">
+                                <div className="w-full pb-6">
+                                  <span className="block text-white opacity-25 text-sm uppercase">{ block.date }</span>
+                                  <span className="block text-white text-xl font-bold">{ block.jobTitle }</span>
+                                  <span className="block text-white text-lg">{ block.employer }</span>
+                                </div>
+                                { experienceLast !== index + 1 && (
+                                  <div className="w-full h-px bg-white opacity-10"></div>
+                                )}
+                              </div>
+                            }
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div 
           className=""
@@ -61,3 +116,42 @@ const AboutPage = ({ location }) => {
 }
 
 export default AboutPage
+
+export const query = graphql`
+  query AboutQuery {
+    about: datoCmsAbout {
+      title
+      heading
+      introText
+      sidebar {
+        ... on DatoCmsListItem {
+          id
+          model {
+            apiKey
+          }
+          text
+        }
+        ... on DatoCmsTitle {
+          id
+          model {
+            apiKey
+          }
+          text
+        }
+      }
+      experience {
+        children {
+          id
+        }
+        ... on DatoCmsExperienceItem {
+          model {
+            apiKey
+          }
+          date
+          jobTitle
+          employer
+        }
+      }
+    }
+  }
+`
