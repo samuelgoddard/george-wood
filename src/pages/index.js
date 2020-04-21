@@ -23,7 +23,7 @@ const item = {
   },
 }
 
-const IndexPage = ({ location }) => {
+const IndexPage = ({ location, data: { work} }) => {
   return (
     <>
       <SEO title="Home" />
@@ -34,66 +34,43 @@ const IndexPage = ({ location }) => {
         className=""
       >
         <div className="container">
-          <div className="w-11/12 md:w-9/12 mx-auto">
-            <motion.div 
-              className=""
-              variants={item}
-              transition="easeInOut"
-            >
-              <Link to="/" className="flex flex-wrap items-end px-2 md:px-3 lg:px-5 py-12 lg:py-16 hover:opacity-50 focus:opacity-50 transition duration-500 ease-in-out">
-                <div className="w-auto mr-3">
-                  <span className="text-xl md:text-2xl text-white opacity-25 block mb-8">1.</span>
-                </div>
-                <div className="flex-1">
-                  <h2 className="title text-white mb-0 leading-none mb-2">Adtrak</h2>
-                  <div className="flex flex-wrap">
-                    <span className="block text-yellow mr-3 md:text-lg">UX</span>
-                    <span className="block text-yellow mr-3 md:text-lg">UI</span>
-                    <span className="block text-yellow mr-3 md:text-lg">Something</span>
+          <div className="w-full md:w-9/12 mx-auto">
+
+
+            {work.edges.map(({ node }, index) => {
+              const workLast = work.edges.length;
+              return (
+              <motion.div 
+                className=""
+                variants={item}
+                transition="easeInOut"
+              >
+                <Link to={`work/${node.slug}`} className="flex flex-wrap items-end px-2 md:px-3 lg:px-5 py-12 lg:py-16 hover:opacity-50 focus:opacity-50 transition duration-500 ease-in-out">
+                  <div className="w-auto mr-3">
+                    <span className="text-xl md:text-2xl text-white opacity-25 block mb-8">{ index + 1}.</span>
                   </div>
-                </div>
-              </Link>
-              <div className="w-full h-px bg-white opacity-10"></div>
-            </motion.div>
-            <motion.div 
-              className=""
-              variants={item}
-              transition="easeInOut"
-            >
-              <Link to="/" className="flex flex-wrap items-end px-2 md:px-3 lg:px-5 py-12 lg:py-16 hover:opacity-50 focus:opacity-50 transition duration-500 ease-in-out">
-                <div className="w-auto mr-3">
-                  <span className="text-xl md:text-2xl text-white opacity-25 block mb-8">2.</span>
-                </div>
-                <div className="flex-1">
-                  <h2 className="title text-white mb-0 leading-none mb-2">Something Else</h2>
-                  <div className="flex flex-wrap">
-                    <span className="block text-yellow mr-3 md:text-lg">UX</span>
-                    <span className="block text-yellow mr-3 md:text-lg">UI</span>
-                    <span className="block text-yellow mr-3 md:text-lg">Something</span>
+                  <div className="flex-1">
+                    <h2 className="title text-white mb-0 leading-none mb-2">{ node.title }</h2>
+                    <div className="flex flex-wrap">
+                      {node.categories.map(({ title }, index) => {
+                        const catLast = node.categories.length;
+                        return (
+                          <>
+                            <span className="block text-yellow md:text-lg">{ title }</span>
+                            { catLast !== index + 1 && (
+                              <span className="block text-yellow mx-2 md:text-lg">•</span>
+                            )}
+                          </>
+                        )
+                      })}
+                    </div>
                   </div>
-                </div>
-              </Link>
-              <div className="w-full h-px bg-white opacity-10"></div>
-            </motion.div>
-            <motion.div 
-              className=""
-              variants={item}
-              transition="easeInOut"
-            >
-              <Link to="/" className="flex flex-wrap items-end px-2 md:px-3 lg:px-5 py-12 lg:py-16 hover:opacity-50 focus:opacity-50 transition duration-500 ease-in-out">
-                <div className="w-auto mr-3">
-                  <span className="text-xl md:text-2xl text-white opacity-25 block mb-8">3.</span>
-                </div>
-                <div className="flex-1">
-                  <h2 className="title text-white mb-0 leading-none mb-2">Third Eye</h2>
-                  <div className="flex flex-wrap">
-                    <span className="block text-yellow mr-3 md:text-lg">UX</span>
-                    <span className="block text-yellow mr-3 md:text-lg">UI</span>
-                    <span className="block text-yellow mr-3 md:text-lg">Something</span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
+                </Link>
+                { workLast !== index + 1 && (
+                  <div className="w-full h-px bg-white opacity-10"></div>
+                )}
+              </motion.div>
+            )})}
           </div>
         </div>
 
@@ -110,3 +87,19 @@ const IndexPage = ({ location }) => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query IndexQuery {
+    work: allDatoCmsWork(sort: { fields: [position], order: ASC }) {
+      edges {
+        node {
+          title
+          slug
+          categories {
+            title
+          }
+        }
+      }
+    }
+  }
+`

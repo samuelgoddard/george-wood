@@ -15,3 +15,8 @@
 body {
     @apply min-h-screen;
 }
+
+.text-orientation {
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+}

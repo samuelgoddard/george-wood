@@ -38,7 +38,7 @@ const AboutPage = ({ location }) => {
             variants={item}
             transition="easeInOut"
           >
-            <div className="w-1/2 py-12 lg:py-16">
+            <div className="w-10/12 md:w-1/2 py-12 lg:py-16">
               <h1 className="title text-red">Ey Up,</h1>
               
               <p className="text-lg text-red">I’m George. Lorem ipsum dolor sit amet, consecter adipiscing elit. Aenean in diam ante. Cras lobortis a orci sed tempus. Nulla ornare mi in lacus dignissim.</p>

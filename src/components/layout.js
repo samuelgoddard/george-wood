@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from "./header"
@@ -30,18 +29,8 @@ const variants = {
 }
 
 const Layout = ({ children, location }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <div className={ location.pathname == "/" ? "transition duration-500 ease-in-out bg-red min-h-screen " : "transition duration-500 ease-in-out min-h-screen" }>
+    <div className={ location.pathname === "/" ? "transition duration-500 ease-in-out bg-red min-h-screen " : "transition duration-500 ease-in-out min-h-screen" }>
       <Header path={location.pathname} />
       <AnimatePresence>
         <motion.main

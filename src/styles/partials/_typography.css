@@ -1,5 +1,5 @@
 body {
-  @apply font-sans antialiased;
+  @apply font-sans antialiased text-black;
 }
 
 /* Headings */
@@ -16,7 +16,19 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	@apply text-lg;
+  @apply text-3xl; 
+
+  @screen md {
+    @apply text-3xl;
+  }
+  
+  @screen lg {
+    @apply text-4xl;
+  }
+
+  @screen xl {
+    @apply text-5xl;
+  }
 }
 
 .title {

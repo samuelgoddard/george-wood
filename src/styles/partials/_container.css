@@ -5,3 +5,10 @@
 
     max-width: theme('screens.xl');
 }
+
+@media only screen and (max-width: theme(screens.md)) {
+  .container--no-pad {
+    @apply px-0;
+  }
+}
+  
