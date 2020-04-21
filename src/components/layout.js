@@ -6,6 +6,12 @@ import Header from "./header"
 
 import "../styles/main.css"
 
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faMusic, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
+import { faDribbble, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons"
+
+library.add(faMusic, faMapMarkerAlt, faDribbble, faTwitter, faInstagram)
+
 const duration = 0.35
 
 const variants = {

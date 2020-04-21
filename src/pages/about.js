@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import { motion } from 'framer-motion'
+import Img from "gatsby-image"
 
 const duration = 0.35
 
@@ -33,16 +34,42 @@ const AboutPage = ({ location, data: { about } }) => {
         className=""
       >
         <div className="container">
-          <motion.div 
-            className="content"
-            variants={item}
-            transition="easeInOut"
-          >
-            <div className="w-10/12 md:w-1/2 pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pb-24">
-              <h1 className="title text-red">{about.heading}</h1>
-              <span className="block content content--fancy" dangerouslySetInnerHTML={{__html:about.introText}}></span>
+          <div className="pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pb-24">
+            <div className="flex flex-wrap">
+              <motion.div 
+                className="content w-full md:w-1/2"
+                variants={item}
+                transition="easeInOut"
+              >
+                <h1 className="title text-red">{about.heading}</h1>
+                <span className="block content content--fancy" dangerouslySetInnerHTML={{__html:about.introText}}></span>
+              </motion.div>
+              
+              <motion.div 
+                className="content w-full md:w-5/12 md:ml-auto z-20 relative"
+                variants={item}
+                transition="easeInOut"
+              >
+                <div className="">
+                  <div className="flex flex-wrap justify-end md:absolute top-0 right-0 left-0 bottom-0 z-20 -mx-3 pr-16 mt-16 md:mt-0 -mb-32 md:-mb-0">
+                    {about.gallery.map((node, index) => {
+                      return (
+                        <div className="w-1/2 px-3 pb-5 gallery-image">
+                          <Img
+                            key={index}
+                            fluid={node.fluid}
+                            key={node.title}
+                            alt={node.alt}
+                            className="w-full shadow shadow-lg"
+                          />
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <motion.div 
@@ -50,7 +77,7 @@ const AboutPage = ({ location, data: { about } }) => {
           variants={item}
           transition="easeInOut"
         >
-          <div className="bg-red text-white py-16 md:py-20 xl:py-32">
+          <div className="bg-red text-white py-16 md:py-20 xl:py-32 relative z-0">
             <div className="container">
               <div className="overflow-hidden">
                 <div className="flex flex-wrap md:-mx-10">
@@ -123,6 +150,16 @@ export const query = graphql`
       title
       heading
       introText
+      gallery {
+        fluid(
+          maxWidth: 900
+          maxHeight: 900
+          imgixParams: {h: "900", w: "900", fit: "crop", crop: "faces, center"}) {
+          ...GatsbyDatoCmsFluid_noBase64
+        }
+        title
+        alt
+      }
       sidebar {
         ... on DatoCmsListItem {
           id

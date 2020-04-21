@@ -48,7 +48,7 @@ const BlogPostPage = ({ data: { post }, location, pageContext }) => {
           <div className="container mb-2 md:mb-8">
             <div className="w-full md:w-9/12 mx-auto">
               <div className="flex flex-wrap items-start py-12 lg:py-16">
-                <div class="w-auto mr-5 mt-2 md:mt-3 lg:mt-4">
+                <div className="w-auto mr-5 mt-2 md:mt-3 lg:mt-4">
                   <span className="text-grey-dark uppercase md:text-xl text-orientation transform rotate-60">{ month } { year }</span>
                 </div>
                 <div className="flex-1">
