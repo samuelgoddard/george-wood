@@ -17,6 +17,7 @@ body {
 }
 
 .text-orientation {
-    writing-mode: vertical-lr;
-    text-orientation: sideways-right;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    line-height: 0;
 }
