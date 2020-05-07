@@ -4,7 +4,7 @@ import NowPlaying from "./nowPlaying"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Footer = ({ path }) => (
-  <div className="">
+  <div className="pb-16 md:pb-0">
     <div className={ path === "/" ? "bg-white w-full h-px opacity-10" : "bg-red w-full h-px opacity-10" }></div>
     <footer className="pt-12 pb-8 md:pt-16 md:pb-12">
       <div className="container">

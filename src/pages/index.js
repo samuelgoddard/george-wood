@@ -38,8 +38,8 @@ const IndexPage = ({ location, data: { work} }) => {
           initial="hidden" 
           animate="visible"
         >
-          <div className="container relative -mt-2">
-            <div className="absolute top-0 left-0 -mt-20 md:-mt-24 ml-40">
+          <div className="container relative -mt-1 md:-mt-2">
+            <div className="absolute top-0 left-0 -mt-20 md:-mt-24 ml-32 md:ml-40">
               <div className="flex flex-wrap items-center ml-1">
                 <span className={ location.pathname === "/" ? "w-5 h-px bg-grey mx-3 opacity-25" : "w-5 h-px bg-black mx-3 opacity-25" }></span>
                 <span className={  location.pathname === "/" ? "text-yellow" : "text-black"}>UX / UI Designer</span>

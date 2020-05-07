@@ -85,6 +85,12 @@ h3, .h3 {
   }
 }
 
+.mobile-link {
+  &.is--active {
+    @apply bg-red-light !important;
+  }
+}
+
 .home {
   .link {
     &.is--active {
