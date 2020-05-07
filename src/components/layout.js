@@ -36,7 +36,7 @@ const variants = {
 
 const Layout = ({ children, location }) => {
   return (
-    <div className={ location.pathname === "/" ? "transition duration-500 ease-in-out bg-red min-h-screen " : "transition duration-500 ease-in-out min-h-screen" }>
+    <div className={ location.pathname === "/" ? "transition duration-500 ease-in-out bg-red min-h-screen home" : "transition duration-500 ease-in-out min-h-screen" }>
       <Header path={location.pathname} />
       <AnimatePresence>
         <motion.main

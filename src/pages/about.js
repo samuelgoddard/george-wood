@@ -33,11 +33,26 @@ const AboutPage = ({ location, data: { about } }) => {
         animate="visible"
         className=""
       >
+        <motion.div 
+          variants={container}
+          initial="hidden" 
+          animate="visible"
+        >
+          <div className="container relative -mt-2">
+            <div className="absolute top-0 left-0 -mt-20 md:-mt-24 ml-40">
+              <div className="flex flex-wrap items-center ml-1">
+                <span className="w-5 h-px bg-black mx-3 opacity-25"></span>
+                <span className="text-black">About Me</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="container">
           <div className="pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pb-24">
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap md:-mx-5">
               <motion.div 
-                className="content w-full md:w-1/2"
+                className="content w-full md:w-5/12 md:px-5"
                 variants={item}
                 transition="easeInOut"
               >
@@ -46,25 +61,18 @@ const AboutPage = ({ location, data: { about } }) => {
               </motion.div>
               
               <motion.div 
-                className="content w-full md:w-5/12 md:ml-auto z-20 relative"
+                className="content gallery md:w-1/2 md:ml-auto z-20 relative md:px-5 md:mt-16 lg:mt-0 lg:-mt-8"
                 variants={item}
                 transition="easeInOut"
               >
-                <div className="">
-                  <div className="flex flex-wrap justify-end md:absolute top-0 right-0 left-0 bottom-0 z-20 -mx-3 pr-16 mt-16 md:mt-0 -mb-32 md:-mb-0">
-                    {about.gallery.map((node, index) => {
-                      return (
-                        <div className="w-1/2 px-3 pb-5 gallery-image">
-                          <Img
-                            key={index}
-                            fluid={node.fluid}
-                            key={node.title}
-                            alt={node.alt}
-                            className="w-full shadow shadow-lg"
-                          />
-                        </div>
-                      )
-                    })}
+                <div className="-mb-40 md:-mb-64">
+                  <div className="z-20">
+                    <Img
+                      fluid={about.gallery.fluid}
+                      key={about.gallery.title}
+                      alt={about.gallery.alt}
+                      className="w-full"
+                    />
                   </div>
                 </div>
               </motion.div>
@@ -77,7 +85,7 @@ const AboutPage = ({ location, data: { about } }) => {
           variants={item}
           transition="easeInOut"
         >
-          <div className="bg-red text-white py-16 md:py-20 xl:py-32 relative z-0">
+          <div className="bg-red text-white pt-32 pb-16 md:pt-20 md:pb-20 xl:pt-32 xl:pb-32 relative z-0">
             <div className="container">
               <div className="overflow-hidden">
                 <div className="flex flex-wrap md:-mx-10">
@@ -110,7 +118,7 @@ const AboutPage = ({ location, data: { about } }) => {
                               block.model.apiKey === 'experience_item' &&
                               <div className="pb-6">
                                 <div className="w-full pb-6">
-                                  <span className="block text-white opacity-25 text-sm uppercase">{ block.date }</span>
+                                  <span className="block text-white opacity-25 text-sm uppercase tracking-widest">{ block.date }</span>
                                   <span className="block text-white text-xl font-bold">{ block.jobTitle }</span>
                                   <span className="block text-white text-lg">{ block.employer }</span>
                                 </div>
@@ -152,9 +160,7 @@ export const query = graphql`
       introText
       gallery {
         fluid(
-          maxWidth: 900
-          maxHeight: 900
-          imgixParams: {h: "900", w: "900", fit: "crop", crop: "faces, center"}) {
+          imgixParams: {}) {
           ...GatsbyDatoCmsFluid_noBase64
         }
         title

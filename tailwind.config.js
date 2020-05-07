@@ -16,6 +16,16 @@ module.exports = {
       yellow: '#FDC354',
       red: '#DE3B2D',
     },
+    letterSpacing: {
+      tightest: '-.075em',
+      tighter: '-.05em',
+      tight: '-.025em',
+      normal: '0',
+      wide: '.025em',
+      wider: '.05em',
+      widest: '.1em',
+      widest: '.2em',
+    },
     fontSize: {
       'xs': '.75rem',
       'sm': '.875rem',

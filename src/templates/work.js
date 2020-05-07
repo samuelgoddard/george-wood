@@ -45,11 +45,25 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
           initial="hidden" 
           animate="visible"
         >
+          <div className="container relative -mt-2">
+            <div className="absolute top-0 left-0 -mt-20 md:-mt-24 ml-40">
+              <div className="flex flex-wrap items-center ml-1">
+                <span className="w-5 h-px bg-black mx-3 opacity-25"></span>
+                <span className="text-black">Work / <strong>{ current.title }</strong></span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+        <motion.div 
+          variants={container}
+          initial="hidden" 
+          animate="visible"
+        >
           <div className="container mb-2 md:mb-8">
             <div className="w-full md:w-9/12 mx-auto">
               <div className="flex flex-wrap items-start py-12 lg:py-16">
                 <div className="w-auto mr-5 mt-2 md:mt-3 lg:mt-4">
-                  <span className="text-grey-dark uppercase md:text-xl text-orientation transform rotate-60">{ month } { year }</span>
+                  <span className="text-grey-dark uppercase md:text-lg text-orientation transform rotate-60 tracking-widest">{ month } { year }</span>
                 </div>
                 <div className="flex-1">
                   <div className="w-10/12 md:w-9/12 lg:w-8/12">
@@ -150,9 +164,9 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
             initial="hidden" 
             animate="visible"
           >
-            <div className="container text-center">
+            <div className="container text-center md:mb-8 xl:mb-12">
               <Link to={`/work/${prev.node.slug}/`} className="text-red hover:text-black focus:text-black transition duration-500 ease-in-out">
-                <span className="block text-black text-base uppercase tracking-widest">Next Post</span>
+                <span className="block text-black text-base uppercase tracking-widest">Next Project</span>
                 <div className="block text-4xl md:text-6xl xl:text-7xl font-serif" dangerouslySetInnerHTML={{ __html: prev.node.title }}></div>
               </Link>
             </div>
@@ -232,9 +246,7 @@ export const query = graphql`
           }
           image {
             fluid(
-              maxWidth: 1600
-              maxHeight: 720
-              imgixParams: {h: "720", w: "1600", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {}) {
               ...GatsbyDatoCmsFluid_noBase64
             }
             title

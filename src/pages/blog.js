@@ -33,6 +33,21 @@ const BlogIndexPage = ({ data: { articles }, location }) => {
         animate="visible"
         className=""
       >
+        <motion.div 
+          variants={container}
+          initial="hidden" 
+          animate="visible"
+        >
+          <div className="container relative -mt-2">
+            <div className="absolute top-0 left-0 -mt-20 md:-mt-24 ml-40">
+              <div className="flex flex-wrap items-center ml-1">
+                <span className="w-5 h-px bg-black mx-3 opacity-25"></span>
+                <span className="text-black">Blog</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="container">
           <div className="w-full md:w-9/12 mx-auto">
 
@@ -52,7 +67,7 @@ const BlogIndexPage = ({ data: { articles }, location }) => {
                   <Link to={`blog/${node.slug}`} className="px-2 md:px-3 lg:px-5 block py-12 lg:py-16 hover:opacity-50 focus:opacity-50 transition duration-500 ease-in-out">
                     <h2 className="title text-red mb-0 leading-none mb-2">{ node.title }</h2>
 
-                    <span className="block text-grey-dark uppercase">{ month } { year }</span>
+                    <span className="block text-grey-dark uppercase tracking-widest">{ month } { year }</span>
                   </Link>
                   { articleLast !== index + 1 && (
                     <div className="w-full h-px bg-red opacity-10"></div>
