@@ -91,6 +91,12 @@ h3, .h3 {
   }
 }
 
+.mobile-link-internal {
+  &.is--active {
+    @apply bg-grey !important;
+  }
+}
+
 .home {
   .link {
     &.is--active {

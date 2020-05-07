@@ -50,17 +50,18 @@ const Layout = ({ children, location }) => {
         >
         {children}
         </motion.main>
-        <div className="fixed bottom-0 left-0 w-full bg-red flex flex-wrap items-center justify-center z-40 border-red-light border-t md:hidden">
-          <Link activeClassName="is--active" className="mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" to="/">
+        <div 
+          className={ location.pathname === "/" ? "fixed bottom-0 left-0 w-full bg-red flex flex-wrap items-center justify-center z-40 border-red-light border-t md:hidden" : "fixed bottom-0 left-0 w-full bg-white flex flex-wrap items-center justify-center z-40 border-grey border-t md:hidden"}>
+          <Link activeClassName="is--active" className={ location.pathname === "/" ? "mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" : "mobile-link-internal flex-1 text-red border-grey border-r py-4 hover:bg-grey focus:bg-grey transition duration-300"} to="/">
             <FontAwesomeIcon className="mx-auto block w-5 h-5" icon={'edit'} />
           </Link>
-          <Link activeClassName="is--active" partiallyActive={true} className="mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" to="/about">
+          <Link activeClassName="is--active" partiallyActive={true} className={ location.pathname === "/" ? "mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" : "mobile-link-internal flex-1 text-red border-grey border-r py-4 hover:bg-grey focus:bg-grey transition duration-300"} to="/about">
             <FontAwesomeIcon className="mx-auto block w-5 h-5" icon={'address-card'} />
           </Link>
-          <Link activeClassName="is--active" partiallyActive={true} className="mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" to="/blog">
+          <Link activeClassName="is--active" partiallyActive={true} className={ location.pathname === "/" ? "mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" : "mobile-link-internal flex-1 text-red border-grey border-r py-4 hover:bg-grey focus:bg-grey transition duration-300"} to="/blog">
             <FontAwesomeIcon className="mx-auto block w-5 h-5" icon={'newspaper'} />
           </Link>
-          <a className="flex-1 text-white py-4 mobile-link hover:bg-red-light focus:bg-red-light transition duration-300" href="mailto:georgewood.me@gmail.com">
+          <a className={ location.pathname === "/" ? "mobile-link flex-1 text-white py-4 hover:bg-red-light focus:bg-red-light transition duration-300" : "mobile-link-internal flex-1 text-red py-4 hover:bg-grey focus:bg-grey transition duration-300"} href="mailto:georgewood.me@gmail.com">
             <FontAwesomeIcon className="mx-auto block w-5 h-5" icon={'envelope-open'} />
           </a>
         </div>
