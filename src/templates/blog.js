@@ -128,7 +128,7 @@ const BlogPostPage = ({ data: { post }, location, pageContext }) => {
                           <Img fluid={block.image1.fluid} key={block.image1.title} alt={block.image1.alt} className="w-full" />
                         </div>
                         <div className="w-full md:w-1/2 md:px-6 mb-12 md:mb-20 xl:mb-24">
-                          <Img fluid={block.image1.fluid} key={block.image1.title} alt={block.image1.alt} className="w-full" />
+                          <Img fluid={block.image2.fluid} key={block.image2.title} alt={block.image2.alt} className="w-full" />
                         </div>
                       </div>
                     </div>
