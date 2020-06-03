@@ -65,7 +65,7 @@ const BlogIndexPage = ({ data: { articles }, location }) => {
                   transition="easeInOut"
                   key={index}
                 >
-                  <Link to={`blog/${node.slug}`} className="px-2 md:px-3 lg:px-5 block py-12 lg:py-16 hover:opacity-50 focus:opacity-50 transition duration-500 ease-in-out">
+                  <Link to={`${node.slug}`} className="px-2 md:px-3 lg:px-5 block py-12 lg:py-16 hover:opacity-50 focus:opacity-50 transition duration-500 ease-in-out">
                   <span className="block text-grey-dark uppercase tracking-widest mb-2">{ month } { year }</span>
                     <h2 className="title text-red mb-0 leading-none ">{ node.title }</h2>                    
                   </Link>
