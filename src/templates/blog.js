@@ -67,7 +67,7 @@ const BlogPostPage = ({ data: { post }, location, pageContext }) => {
                   <span className="text-grey-dark uppercase md:text-lg text-orientation transform rotate-60 tracking-widest">{ month } { year }</span>
                 </div>
                 <div className="flex-1">
-                  <div className="w-10/12 md:w-9/12 lg:w-8/12">
+                  <div className="w-10/12">
                     <h1 className="title text-red">{ post.title }</h1>
                   
                     <span className="block text-lg lg:text-xl text-red mb-0 pb-0" dangerouslySetInnerHTML={{__html:post.introText}}></span>
