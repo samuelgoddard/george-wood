@@ -26,7 +26,11 @@ const item = {
 const IndexPage = ({ location, data: { work} }) => {
   return (
     <>
-      <SEO title="Home" />
+      <SEO
+        titleOverride={ "Home" }
+        pathnameOverride={ location.pathname}
+      />
+
       <motion.section
         variants={container}
         initial="hidden" 

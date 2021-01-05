@@ -2,8 +2,9 @@ require("dotenv").config({ path: `.env` })
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby x Tailwind x Framer Motion`,
-    description: `An opinionated starter for Gatsby v2 with TailwindCSS, PostCSS and Framer Motion page transitions.`,
+    title: `George Wood`,
+    siteUrl: `https://george-wood.netlify.app`,
+    description: `George Wood`,
     author: `@samuelgoddard`,
   },
   plugins: [
@@ -35,7 +36,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     {

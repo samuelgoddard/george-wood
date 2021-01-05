@@ -26,7 +26,12 @@ const item = {
 const AboutPage = ({ location, data: { about } }) => {
   return (
     <>
-      <SEO title={about.title} />
+      <SEO
+        titleOverride={ about.metaTags && about.metaTags.title ? about.metaTags.title : about.title }
+        descriptionOverride={ about.metaTags && about.metaTags.description ? about.metaTags.description : null }
+        pathnameOverride={ location.pathname}
+        imageOverride={ about.metaTags && about.metaTags.image ? about.metaTags.image.url : null }
+      />
       <motion.section
         variants={container}
         initial="hidden" 
@@ -156,6 +161,14 @@ export const query = graphql`
   query AboutQuery {
     about: datoCmsAbout {
       title
+      metaTags {
+        title
+        description
+        twitterCard
+        image {
+          url
+        }
+      }
       heading
       introText
       gallery {

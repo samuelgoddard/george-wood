@@ -33,7 +33,13 @@ const BlogPostPage = ({ data: { post }, location, pageContext }) => {
 
   return (
     <>
-      <SEO title="blog" />
+      <SEO
+        titleOverride={ post.metaTags && post.metaTags.title ? post.metaTags.title : post.title }
+        descriptionOverride={ post.metaTags && post.metaTags.description ? post.metaTags.description : null }
+        pathnameOverride={ location.pathname}
+        imageOverride={ post.metaTags && post.metaTags.image ? post.metaTags.image.url : null }
+      />
+      
       <motion.section
         variants={container}
         initial="hidden" 
@@ -63,7 +69,7 @@ const BlogPostPage = ({ data: { post }, location, pageContext }) => {
           <div className="container mb-2 md:mb-8">
             <div className="w-full md:w-9/12 mx-auto">
               <div className="flex flex-wrap items-start py-12 lg:py-16">
-                <div className="w-auto mr-5 mt-2 md:mt-3 lg:mt-4">
+                <div className="w-auto mr-8 md:mr-12 mt-2 md:mt-3 lg:mt-4">
                   <span className="text-grey-dark uppercase md:text-lg text-orientation transform rotate-60 tracking-widest">{ month } { year }</span>
                 </div>
                 <div className="flex-1">
@@ -125,10 +131,20 @@ const BlogPostPage = ({ data: { post }, location, pageContext }) => {
                     <div className="overflow-hidden">
                       <div className="flex flex-wrap md:-mx-6">
                         <div className="w-full md:w-1/2 md:px-6 mb-8 md:mb-20 xl:mb-24">
-                          <Img fluid={block.image1.fluid} key={block.image1.title} alt={block.image1.alt} className="w-full" />
+                          <figure>
+                            <Img fluid={block.image1.fluid} key={block.image1.title} alt={block.image1.alt} className="w-full" />
+                            { block.image1.title && (
+                              <figcaption className="bg-grey p-3 font-mono">{ block.image1.title }</figcaption>
+                            )}
+                          </figure>
                         </div>
                         <div className="w-full md:w-1/2 md:px-6 mb-12 md:mb-20 xl:mb-24">
-                          <Img fluid={block.image2.fluid} key={block.image2.title} alt={block.image2.alt} className="w-full" />
+                          <figure>
+                            <Img fluid={block.image2.fluid} key={block.image2.title} alt={block.image2.alt} className="w-full" />
+                            { block.image2.title && (
+                              <figcaption className="bg-grey p-3 font-mono">{ block.image2.title }</figcaption>
+                            )}
+                          </figure>
                         </div>
                       </div>
                     </div>
@@ -143,7 +159,12 @@ const BlogPostPage = ({ data: { post }, location, pageContext }) => {
                   animate="visible"
                 >
                   <div className="container container--no-pad mb-12 md:mb-20 xl:mb-24">
-                    <Img fluid={block.image.fluid} key={block.image.title} alt={block.image.alt} className="w-full" />
+                    <figure>
+                      <Img fluid={block.image.fluid} key={block.image.title} alt={block.image.alt} className="w-full" />
+                      { block.image.title && (
+                        <figcaption className="bg-grey p-3 font-mono">{ block.image.title }</figcaption>
+                      )}
+                    </figure>
                   </div>
                 </motion.div>
               }
@@ -199,6 +220,14 @@ export const query = graphql`
     post: datoCmsBlog(slug: { eq: $slug }) {
       title
       introText
+      metaTags {
+        title
+        description
+        twitterCard
+        image {
+          url
+        }
+      }
       meta {
         createdAt
       }
