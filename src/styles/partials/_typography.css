@@ -119,7 +119,11 @@ h3, .h3 {
   }
 
   a { 
-    @apply text-yellow underline;
+    @apply bg-yellow bg-opacity-25 transition ease-in-out duration-300;
+
+    &:hover, &:focus {
+      @apply bg-opacity-75;
+    }
   }
 }
 

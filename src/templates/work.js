@@ -140,7 +140,7 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
                           <figure>
                             <Img fluid={block.image1.fluid} key={block.image1.title} alt={block.image1.alt} className="w-full" />
                             { block.image1.title && (
-                              <figcaption className="bg-grey p-3 font-mono">{ block.image1.title }</figcaption>
+                              <figcaption className="border-b border-grey p-3">{ block.image1.title }</figcaption>
                             )}
                           </figure>
                         </div>
@@ -148,7 +148,7 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
                         <figure>
                             <Img fluid={block.image2.fluid} key={block.image2.title} alt={block.image2.alt} className="w-full" />
                             { block.image2.title && (
-                              <figcaption className="bg-grey p-3 font-mono">{ block.image2.title }</figcaption>
+                              <figcaption className="border-b border-grey p-3">{ block.image2.title }</figcaption>
                             )}
                           </figure>
                         </div>
@@ -168,7 +168,7 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
                     <figure>
                       <Img fluid={block.image.fluid} key={block.image.title} alt={block.image.alt} className="w-full" />
                       { block.image.title && (
-                        <figcaption className="bg-grey p-3 font-mono">{ block.image.title }</figcaption>
+                        <figcaption className="border-b border-grey p-3">{ block.image.title }</figcaption>
                       )}
                     </figure>
                   </div>
