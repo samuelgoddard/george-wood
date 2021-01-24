@@ -243,7 +243,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1200
               maxHeight: 1200
-              imgixParams: {h: "1200", w: "1200", fit: "crop", crop: "faces, edges", dpi: 1}) {
+              imgixParams: {h: "1200", w: "1200", fit: "crop", crop: "faces, edges", fm: "jpg", auto: "compress"}) {
               ...GatsbyDatoCmsFluid_noBase64
             }
             title
@@ -253,7 +253,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1200
               maxHeight: 1200
-              imgixParams: {h: "1200", w: "1200", fit: "crop", crop: "faces, edges", dpi: 1}) {
+              imgixParams: {h: "1200", w: "1200", fit: "crop", crop: "faces, edges", fm: "jpg", auto: "compress"}) {
               ...GatsbyDatoCmsFluid_noBase64
             }
             title
@@ -274,8 +274,8 @@ export const query = graphql`
           }
           image {
             fluid(
-              maxWidth: 1920
-              imgixParams: {w: "1920", fit: "crop", crop: "faces, edges", dpi: 1 }) {
+              maxWidth: 1600,
+              imgixParams: { fm: "jpg", auto: "compress", fit: "crop", crop: "faces, edges" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
             title

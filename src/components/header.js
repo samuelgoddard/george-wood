@@ -21,8 +21,9 @@ const Header = ({ path }) => {
 
           <div className="ml-auto hidden md:block">
             <ul className="flex flex-wrap">
-              <li>
+              <li className={ path.includes("work") ? "psuedo-active" : ""}>
                 <Link
+                // partiallyActive={true}
                   activeClassName="is--active"
                   className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" }
                   to="/"

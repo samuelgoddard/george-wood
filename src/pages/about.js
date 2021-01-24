@@ -66,11 +66,11 @@ const AboutPage = ({ location, data: { about } }) => {
               </motion.div>
               
               <motion.div 
-                className="content gallery md:w-1/2 md:ml-auto z-20 relative md:px-5 md:mt-16 lg:mt-0 lg:-mt-8"
+                className="content gallery md:w-1/2 xl:w-7/12 md:ml-auto z-20 relative md:px-5 md:mt-16 lg:mt-0 lg:-mt-8"
                 variants={item}
                 transition="easeInOut"
               >
-                <div className="-mb-40 md:-mb-64">
+                <div className="-mb-40 md:-mb-64 md:-mr-16 xl:-mr-16">
                   <div className="z-20">
                     <Img
                       fluid={about.gallery.fluid}
