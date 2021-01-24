@@ -21,7 +21,7 @@ const Header = ({ path }) => {
 
           <div className="ml-auto hidden md:block">
             <ul className="flex flex-wrap">
-              <li className={ path.includes("work") ? "psuedo-active" : ""}>
+              <li className={ path.includes("/work") ? "psuedo-active" : ""}>
                 <Link
                 // partiallyActive={true}
                   activeClassName="is--active"
