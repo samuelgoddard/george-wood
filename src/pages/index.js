@@ -27,7 +27,7 @@ const IndexPage = ({ location, data: { work} }) => {
   return (
     <>
       <SEO
-        titleOverride={ "Home" }
+        titleOverride={ "UX & UI Design Nottingham" }
         pathnameOverride={ location.pathname}
       />
 
