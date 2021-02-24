@@ -87,7 +87,7 @@ h3, .h3 {
 
 .psuedo-active {
   a {
-    @apply relative;
+    @apply relative text-red;
 
     &:after {
       @apply absolute bottom-0 left-0 right-0 text-center -mb-4 text-xl;
