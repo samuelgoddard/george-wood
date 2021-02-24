@@ -44,7 +44,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Aileron', 'Arial', 'sans-serif'],
-        serif: ['Agne', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        logo: ['Agne', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        serif: ['Pangram Black', 'Cambria', 'Times New Roman', 'Times', 'serif'],
       },
       opacity: {
         '10': .10,

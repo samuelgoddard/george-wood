@@ -11,7 +11,7 @@ const Header = ({ path }) => {
           <div className="w-auto">
             <div className="flex flex-wrap items-center mb-4">
               <Link
-                className={ path === "/" ? "text-white block text-2xl md:text-3xl inline-block h1 mb-0 leading-none" : "text-red block text-2xl md:text-3xl inline-block h1 mb-0 leading-none" }
+                className={ path === "/" ? "text-white block text-2xl md:text-3xl inline-block h1 mb-0 leading-none font-logo" : "text-red block text-2xl md:text-3xl inline-block h1 mb-0 leading-none font-logo" }
                 to="/"
               >
                 george<span className="block ml-10">wood.</span>
@@ -25,24 +25,24 @@ const Header = ({ path }) => {
                 <Link
                 // partiallyActive={true}
                   activeClassName="is--active"
-                  className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" }
+                  className={ path === "/" ? "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" }
                   to="/"
                 >
                   Work
                 </Link>
               </li>
               <li>
-                <Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" } to="/about">
+                <Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" } to="/about">
                   About
                 </Link>
               </li>
               <li>
-                <Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" } to="/blog">
+                <Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" } to="/blog">
                   Blog
                 </Link>
               </li>
               <li>
-                <a className={ path === "/" ? "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" } href="mailto:georgewood.me@gmail.com">
+                <a className={ path === "/" ? "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" } href="mailto:georgewood.me@gmail.com">
                   Contact
                 </a>
               </li>
