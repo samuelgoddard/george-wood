@@ -113,7 +113,7 @@ const BlogPostPage = ({ data: { post }, location, pageContext }) => {
                   >
                     <div className="container mb-12 md:mb-20 xl:mb-24">
                       <div className="w-10/12 lg:w-7/12 xl:w-8/12 mx-auto">
-                        <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-red uppercase text-center">
+                        <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-red uppercase text-center tracking-widest">
                           { block.text }
                         </blockquote>
                       </div>
