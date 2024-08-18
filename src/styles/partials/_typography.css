@@ -76,7 +76,7 @@ h3, .h3 {
 /* Link */
 .link {
   &.is--active {
-    @apply relative text-red !important;
+    @apply relative text-off-black !important;
 
     &:after {
       @apply absolute bottom-0 left-0 right-0 text-center -mb-4 text-xl;
@@ -87,7 +87,7 @@ h3, .h3 {
 
 .psuedo-active {
   a {
-    @apply relative text-red;
+    @apply relative text-off-black;
 
     &:after {
       @apply absolute bottom-0 left-0 right-0 text-center -mb-4 text-xl;
@@ -98,7 +98,7 @@ h3, .h3 {
 
 .mobile-link {
   &.is--active {
-    @apply bg-red-light !important;
+    @apply bg-yellow !important;
   }
 }
 
@@ -141,7 +141,7 @@ h3, .h3 {
 .content--fancy {
   p {
     &:first-of-type {
-      @apply text-lg text-red;
+      @apply text-lg text-white;
     }
   }
 }
@@ -152,6 +152,25 @@ h3, .h3 {
     &:before {
       @apply inline-block opacity-25 text-2xl mr-3;
       content: '•';
+    }
+  }
+}
+
+.list--fancy-new {
+  ul {
+    @apply flex flex-wrap;
+  }
+  li {
+    @apply py-2 leading-none border-b w-1/2 block;
+    border-color: rgba(255,255,255,0.1);
+    
+    &:last-of-type,
+    &:nth-last-of-type(2) {
+      @apply border-b-0;
+    }
+
+    &:before {
+      @apply inline-block opacity-25 text-2xl mr-3;
     }
   }
 }

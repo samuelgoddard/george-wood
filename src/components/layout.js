@@ -38,7 +38,7 @@ const variants = {
 
 const Layout = ({ children, location }) => {
   return (
-    <div className={ location.pathname === "/" ? "transition duration-500 ease-in-out bg-red min-h-screen home" : "transition duration-500 ease-in-out min-h-screen" }>
+    <div className={ location.pathname === "/" ? "transition duration-500 ease-in-out bg-off-black min-h-screen home" : "transition duration-500 ease-in-out min-h-screen" }>
       <Header path={location.pathname} />
       <AnimatePresence>
         <motion.main
@@ -51,17 +51,11 @@ const Layout = ({ children, location }) => {
         {children}
         </motion.main>
         <div 
-          className={ location.pathname === "/" ? "fixed bottom-0 left-0 w-full bg-red flex flex-wrap items-center justify-center z-40 border-red-light border-t md:hidden" : "fixed bottom-0 left-0 w-full bg-white flex flex-wrap items-center justify-center z-40 border-grey border-t md:hidden"}>
-          <Link activeClassName="is--active" className={ location.pathname === "/" ? "mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" : "mobile-link-internal flex-1 text-red border-grey border-r py-4 hover:bg-grey focus:bg-grey transition duration-300"} to="/">
+          className={ location.pathname === "/" ? "fixed bottom-0 left-0 w-full bg-off-black flex flex-wrap items-center justify-center z-40 border-black border-t md:hidden" : "fixed bottom-0 left-0 w-full bg-white flex flex-wrap items-center justify-center z-40 border-grey border-t md:hidden"}>
+          <Link activeClassName="is--active" className={ location.pathname === "/" ? "mobile-link flex-1 text-white border-black border-r py-4 hover:bg-black focus:bg-black transition duration-300" : "mobile-link-internal flex-1 text-off-black border-grey border-r py-4 hover:bg-grey focus:bg-grey transition duration-300"} to="/">
             <FontAwesomeIcon className="mx-auto block w-5 h-5" icon={'edit'} />
           </Link>
-          <Link activeClassName="is--active" partiallyActive={true} className={ location.pathname === "/" ? "mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" : "mobile-link-internal flex-1 text-red border-grey border-r py-4 hover:bg-grey focus:bg-grey transition duration-300"} to="/about">
-            <FontAwesomeIcon className="mx-auto block w-5 h-5" icon={'address-card'} />
-          </Link>
-          <Link activeClassName="is--active" partiallyActive={true} className={ location.pathname === "/" ? "mobile-link flex-1 text-white border-red-light border-r py-4 hover:bg-red-light focus:bg-red-light transition duration-300" : "mobile-link-internal flex-1 text-red border-grey border-r py-4 hover:bg-grey focus:bg-grey transition duration-300"} to="/blog">
-            <FontAwesomeIcon className="mx-auto block w-5 h-5" icon={'newspaper'} />
-          </Link>
-          <a className={ location.pathname === "/" ? "mobile-link flex-1 text-white py-4 hover:bg-red-light focus:bg-red-light transition duration-300" : "mobile-link-internal flex-1 text-red py-4 hover:bg-grey focus:bg-grey transition duration-300"} href="mailto:georgewood.me@gmail.com">
+          <a className={ location.pathname === "/" ? "mobile-link flex-1 text-white py-4 hover:bg-black focus:bg-black transition duration-300" : "mobile-link-internal flex-1 text-off-black py-4 hover:bg-grey focus:bg-grey transition duration-300"} href="mailto:georgewood.me@gmail.com">
             <FontAwesomeIcon className="mx-auto block w-5 h-5" icon={'envelope-open'} />
           </a>
         </div>

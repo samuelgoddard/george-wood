@@ -10,7 +10,7 @@ const Footer = ({ path }) => (
       <div className="container">
         <div className="flex flex-wrap items-center">
           <div className="w-full md:w-auto">
-            <div className={ path === "/" ? "text-white flex flex-wrap items-center" : "text-red flex flex-wrap items-center" }>
+            <div className={ path === "/" ? "text-white flex flex-wrap items-center" : "text-black flex flex-wrap items-center" }>
               <div className="flex md:items-center w-full md:w-auto mb-1 md:mb-0">
                 <FontAwesomeIcon className="mr-2 align-middle inline-block w-4 h-4 mt-1 md:mt-0" icon="map-marker-alt" size="sm" />
                 <span className="block mr-8">Nottingham, UK</span>
@@ -24,7 +24,7 @@ const Footer = ({ path }) => (
           </div>
 
           <div className="w-full md:w-auto ml-auto">
-              <div className={ path === "/" ? "text-white flex flex-wrap items-center" : "text-red flex flex-wrap items-center" }>
+              <div className={ path === "/" ? "text-white flex flex-wrap items-center" : "text-black flex flex-wrap items-center" }>
               <a className="pr-2 md:pl-2 transition duration-500 ease-in-out hover:opacity-50 focus:opacity-50" href="https://dribbble.com/georgewood_me" target="_blank" rel="noopener noreferrer" aria-label="Dribble Icon">
                 <FontAwesomeIcon className="mr-2 inline-block w-5 h-5" icon={['fab', 'dribbble']} />
               </a>

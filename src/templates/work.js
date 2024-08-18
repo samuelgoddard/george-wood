@@ -72,9 +72,9 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
                 </div>
                 <div className="flex-1">
                   <div className="w-10/12">
-                    <h1 className="title text-red">{ current.title }</h1>
+                    <h1 className="title text-yellow">{ current.title }</h1>
                   
-                    <span className="block text-lg lg:text-xl text-red mb-0 pb-0" dangerouslySetInnerHTML={{__html:current.introText}}></span>
+                    <span className="block text-lg lg:text-xl text-black mb-0 pb-0" dangerouslySetInnerHTML={{__html:current.introText}}></span>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
                   >
                     <div className="container mb-12 md:mb-20 xl:mb-24">
                       <div className="w-10/12 lg:w-7/12 xl:w-8/12 mx-auto">
-                        <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-red uppercase text-center tracking-widest">
+                        <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-yellow uppercase text-center tracking-wide leading-tight">
                           { block.text }
                         </blockquote>
                       </div>
@@ -185,7 +185,7 @@ const WorkPage = ({ location, pageContext, data: { current }}) => {
             animate="visible"
           >
             <div className="container text-center md:mb-8 xl:mb-12">
-              <Link to={`/work/${prev.node.slug}/`} className="text-red hover:text-black focus:text-black transition duration-500 ease-in-out">
+              <Link to={`/work/${prev.node.slug}/`} className="text-yellow hover:text-black focus:text-black transition duration-500 ease-in-out">
                 <span className="block text-black text-base uppercase tracking-widest">Next Project</span>
                 <div className="block text-4xl md:text-6xl xl:text-7xl font-serif" dangerouslySetInnerHTML={{ __html: prev.node.title }}></div>
               </Link>

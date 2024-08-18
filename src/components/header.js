@@ -11,7 +11,7 @@ const Header = ({ path }) => {
           <div className="w-auto">
             <div className="flex flex-wrap items-center mb-4">
               <Link
-                className={ path === "/" ? "text-white block text-2xl md:text-3xl inline-block h1 mb-0 leading-none font-logo" : "text-red block text-2xl md:text-3xl inline-block h1 mb-0 leading-none font-logo" }
+                className={ path === "/" ? "text-yellow block text-2xl md:text-3xl inline-block h1 mb-0 leading-none font-logo" : "text-black block text-2xl md:text-3xl inline-block h1 mb-0 leading-none font-logo" }
                 to="/"
               >
                 george<span className="block ml-10">wood.</span>
@@ -29,16 +29,6 @@ const Header = ({ path }) => {
                   to="/"
                 >
                   Work
-                </Link>
-              </li>
-              <li>
-                <Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" } to="/about">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link activeClassName="is--active" partiallyActive={true} className={ path === "/" ? "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-white" : "link uppercase font-serif tracking-widest p-2 mx-2 lg:mx-4 xl:mx-8 ml-0 lg:ml-0 xl:ml-0 text-sm text-black" } to="/blog">
-                  Blog
                 </Link>
               </li>
               <li>

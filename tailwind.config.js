@@ -9,6 +9,7 @@ module.exports = {
       "3xl": "1920px",
     },
     colors: {
+      'off-black': '#181818',
       black: '#303843',
       white: '#FFFFFF',
       grey: '#F1F1F1',
